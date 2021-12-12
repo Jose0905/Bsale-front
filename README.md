@@ -12,9 +12,9 @@ importar libreria mysql proporcionada por Bsale creando una constante
 
 por medio de la constantes 'port' se accede al puerto
 
-## conectar a la base de datos
+## crear conexion a la base de datos
 
-Se crea coneccion a abse de datos y se incluyen datos necesarios ara el ingreso, siento estos los siguientes:
+Se crea conexion a abse de datos y se incluyen datos necesarios ara el ingreso, siento estos los siguientes:
     
     host     : 'mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com',
     port     : '3306',
@@ -23,27 +23,24 @@ Se crea coneccion a abse de datos y se incluyen datos necesarios ara el ingreso,
     database : 'bsale_test'
    
 
-### Instalación 🔧
+## Conectar a la base de datos
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+Para conectar a la base de datos se ocupa el metodo connect y por medio de un condicional nos indicara si hubo un error y cual fue o si la conexin fue creada con exito por medio de un console.log
 
-_Dí cómo será ese paso_
+## inicializar la aplicacion
 
-```
-Da un ejemplo
-```
+    const app = express();
+    
+## Configurar los CORS
 
-_Y repite_
+    app.use((req, res, next) => {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, 	X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-	Method');
+	res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, 	DELETE');
+	res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+	next();
+    });
 
-```
-hasta finalizar
-```
-
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
 
 ### Analice las pruebas end-to-end 🔩
 
